@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Loterias Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎲 Gerador & Analisador de Loterias</h1>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <h3>Configurações</h3>
+                <label>Loteria:</label>
+                <select id="loteria-select">
+                    <option value="megasena">Mega-Sena</option>
+                    <option value="lotofacil">Lotofácil</option>
+                    <option value="quina">Quina</option>
+                </select>
+
+                <label>Quantidade de jogos:</label>
+                <input type="number" id="qtd-jogos" value="1" min="1" max="50">
+
+                <label>Estratégia:</label>
+                <select id="estrategia">
+                    <option value="aleatorio">Pura Sorte (Aleatório)</option>
+                    <option value="quentes">Números Frequentes (Baseado no último)</option>
+                </select>
+
+                <button id="btn-gerar">Gerar Jogos e Analisar</button>
+            </aside>
+
+            <main class="content">
+                <section id="ultimo-resultado" class="card">
+                    <h2>Último Concurso</h2>
+                    <div id="info-concurso">Carregando dados...</div>
+                    <div id="dezenas-sorteadas" class="balls-container"></div>
+                    <canvas id="grafico-distribuicao"></canvas>
+                </section>
+
+                <section id="jogos-gerados">
+                    <h2>Seus Palpites</h2>
+                    <div id="lista-jogos"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
